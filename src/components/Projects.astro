@@ -1,40 +1,48 @@
 ---
 import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
+import Laravel from "./icons/Laravel.astro"
+import Mysql from "./icons/Mysql.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
+  LARAVEL: {
+    name: "Laravel",
     class: "bg-black text-white",
-    icon: NextJS,
+    icon: Laravel,
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-black text-white",
+    icon: Mysql,
   },
 }
 const PROJECTS = [
+  
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Sistema gestión de tareas",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Herramienta enfocada a empresas con necesidad de gestionar y monitorear tareas y empleados. creado desde cero con laravel, mysql y plantilla NobleUI.",
+    link: "https://tareas.famdl.net",
+    image: "/projects/sisTareas.webp",
+    tags: [TAGS.LARAVEL, TAGS.MYSQL],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "El dorado - sorteos",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Plataforma para participar en diferentes sorteos, apartado de tickets, máquina de la suerte, generador de boletos en pdf. Creado desde cero con laravel y livewire.",
+    link: "https://sorteo.famdl.net/sorteo/20",
+    image: "/projects/sorteos.webp",
+    tags: [TAGS.LARAVEL],
   },
+  {
+    title: "Sistema administrador de sorteos",
+    description:
+      "Sistema para administrar sorteos con roles y permisos, autentificación, tareas cron para eliminar boletos apartados en su fecha límite, uso de storage para cargar imágenes. Creado desde cero con laravel y mysql.",
+    link: "https://adminsorteo.famdl.net/",
+    image: "/projects/adminSorteos.webp",
+    tags: [TAGS.LARAVEL, TAGS.MYSQL],
+  }
 ]
 ---
 
@@ -47,7 +55,7 @@ const PROJECTS = [
       <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
     </div>
   </div>
-
+  
   <div class="w-full md:w-1/2 md:max-w-lg">
     <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
       {title}
@@ -76,7 +84,7 @@ const PROJECTS = [
             </LinkButton>
           )}
           {link && (
-            <LinkButton href={link}>
+            <LinkButton href={link} target="{_blank}" >
               <Link class="size-4" />
               Preview
             </LinkButton>
